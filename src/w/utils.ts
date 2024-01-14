@@ -98,10 +98,11 @@ export class Utils {
                 const randomString = await Utils.StringGenerator(length);
                 const bucketName = Bn;
                 const fileName = randomString;
+                const ext = path.extname(data[i]);
                 const Bstring = base64DataArray[i].dataUrl;
                 const B64Content = Bstring.split("base64,")[1];
-                await Utils.System_U(bucketName, fileName, Buffer.from(B64Content, 'base64'), fileType);
-                console.log(`File Uploaded to Bucket::${bucketName  + " Type : "+fileType} with name ${fileName} [${i + 1}/${base64DataArray.length}]`);
+                await Utils.System_U(bucketName, fileName + ext, Buffer.from(B64Content, 'base64'), fileType);
+                console.log(`File Uploaded to Bucket::${bucketName  + " Type : "+fileType} with name ${fileName}${ext} [${i + 1}/${base64DataArray.length}]`);
             }
         } catch (err) {
             console.log(err);
