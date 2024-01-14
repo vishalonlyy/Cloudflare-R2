@@ -1,4 +1,8 @@
-import { R2 } from "../base/Structures/client";
+import { R2 } from "../base/modules";
+/**
+ * @description The Utils class
+ * @class Utils
+ */
 export declare class Utils {
     private static xInstance;
     /**
@@ -23,14 +27,14 @@ export declare class Utils {
      * @param data The file to upload
      * @param Bn The bucket name to upload the file to
      */
-    static FUpload(data: any | any[], Bn: string): Promise<void>;
+    static FUpload(data: any | any[], Bn: string): void;
     /**
      * @description Upload a file to the bucket specified using R2 instance built with the builder i.e <b>R2<b/>
      * @param data The file to upload
      * @param Bn The bucket name to upload the file to
      * @param fileName The name of the file to upload
      */
-    static System_U(BN: string, FN: string, D: any, FT: string): Promise<boolean>;
+    static System_U(BN: string, FN: string, D: any, FT: string): Promise<void>;
     /**
      * @description Generate a random string of characters
      * @param length The length of the string to generate

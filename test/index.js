@@ -1,55 +1,24 @@
-const { R2, traffic } = require("cloudflare-r2");
+const { traffic, R2 } = require("cloudflare-r2");
+
 const { EmbedBuilder } = require("discord.js");
 const fs = require("fs");
-const path  = require("path");
+const path = require("path");
 
 try {
-  //  const z = new EmbedBuilder()
-  //  .addFields({name: "test", value: "test"})
   const x = new R2()
     .setSecret(
-      "5491e3a3c0ec2def42d6ea721efe87bae04071af492540a02367da962eeb0a49"
+      "fd34076db2c4f889d92ced47fd28487a758fecbb132efca1b1a5ed65d7b700a2"
     )
-    .setAccessKey("2ea6c4096c9f29f3baceba5e7cd5ca85")
+    .setAccessKey("262602be54c896d7820c9e9f278a73d0")
     .setId("530420ee13768d7553f2e57c64d36d33")
-    .build()
-  function convertImageToBase64(filePath, callback) {
-    fs.readFile(filePath, (err, data) => {
-      if (err) {
-        console.error("Error reading the file:", err);
-        return;
-      }
+    .build();
 
-      const extension = path.extname(filePath).substr(1);
-      const base64Data = data.toString("base64");
-      const dataUrl = `data:image/${extension};base64,${base64Data}`;
-      console.log(extension)
-    //   console.log(dataUrl)
-      callback(dataUrl);
-    });
-  }
-  convertImageToBase64("test/test.png", function (base64Data) {
-    const z = base64Data;
-    // console.log(z)
-    console.log(z)
-    // const tra = new traffic()
-    // .bucketName("arizeclub")
-    // .upload(z)
-
-
-
-  })
   
-  
-
-
-  // const tra = new traffic()
-  // .bucket("vishal")
-  // .upload("")
-
-  console.log({ g: x.getClient(), z: x });
-
-  // console.log(x)
+  const y = new traffic()
+  .bucketName("vishal")
+  .upload(["test/test.png","test/test.png"]);
 } catch (e) {
   console.log(e);
 }
+
+// console.log(x)

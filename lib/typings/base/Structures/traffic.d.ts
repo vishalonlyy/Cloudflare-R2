@@ -1,12 +1,48 @@
-type B_data = {
-    bucketName: string;
-};
+import { B_data } from "../modules/index.js";
 declare class traffic {
     data: B_data | never;
     private static _instance;
     constructor(data?: B_data);
+    /**
+     * @description Use this to set the bucket name to be used bt the R2 Client in uploading files
+     * @param name The name of the bucket to use
+     * @info 📢 This method is required before uploading a file
+     * @example
+     * ```ts
+     * const traffic = new traffic();
+     * traffic.bucketName("bucketName");
+     * or
+     * const traffic = new traffic()
+     * .bucketName("bucketName");
+     * ```
+     */
     bucketName(name: string): this;
-    upload(data: any | any[]): Promise<this>;
+    /**
+     * @description Upload a file to the bucket specified using R2 instance built with the builder i.e <b>R2<b/>
+     * @param data The file to upload (Can be a file or an array of files)
+     * @info 📢 Not suggested to be used without setting the bucket name i.e traffic.bucketName("bucketName")
+     * @example
+     * ```ts
+     * const traffic = new traffic();
+     * traffic.bucketName("bucketName").upload(file);
+     * or
+     * const traffic = new traffic()
+     * .bucketName("bucketName")
+     * .upload(file);
+     * ```
+     */
+    upload(data: any | any[]): this;
+    /**
+     * @description Get the bucket name which is being used by the R2 instance
+     * @returns The bucket name which is being used by the R2 instance
+     * @example
+     * ```ts
+     * const traffic = new traffic()
+     * .bucketName("bucketName");
+     *
+     * traffic.getbucketName();
+     * ```
+     */
     get getbucketName(): string;
 }
 export { traffic };
