@@ -1,5 +1,6 @@
 type B_data = {
     bucketName: string;
+    isbase64: boolean;
 };
 /**
  * @description The data to be stored in the R2 instance

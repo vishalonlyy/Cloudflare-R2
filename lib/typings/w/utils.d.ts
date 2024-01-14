@@ -27,6 +27,12 @@ export declare class Utils {
      * @param data The file to upload
      * @param Bn The bucket name to upload the file to
      */
+    static UploadRaw(data: any, Bn: string): void;
+    /**
+     * @description Upload a file to the bucket specified using R2 instance built with the builder i.e <b>R2<b/>
+     * @param data The file to upload
+     * @param Bn The bucket name to upload the file to
+     */
     static FUpload(data: any | any[], Bn: string): void;
     /**
      * @description Upload a file to the bucket specified using R2 instance built with the builder i.e <b>R2<b/>

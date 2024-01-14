@@ -41,6 +41,33 @@ export class Utils {
         const type = `${extension}`
         return mime.lookup(type) || 'application/octet-stream';
     }
+
+    /**
+     * @description Upload a file to the bucket specified using R2 instance built with the builder i.e <b>R2<b/>
+     * @param data The file to upload while its in the raw format
+     * @param Bn The bucket name to upload the file to
+     * 
+     */
+
+    public static UploadRaw(data: any, Bn: string) {
+        async function z(){
+            if(!Bn) throw new Error("Bucket name not set use .bucket() to set bucket name");
+            for(let i = 0; i < data.length; i++){
+                const fileExtension = await Utils.getExc(data[i]);
+                const z = `${fileExtension}`;
+                const fileType = (await Utils.getType(z)) || 'application/octet-stream';
+                const length = await Utils.RadmonSelection();
+                const randomString = await Utils.StringGenerator(length);
+                const bucketName = Bn;
+                const fileName = randomString;
+                const Bstring = data[i];
+                const B64Content = Bstring.split("base64,")[1];
+                await Utils.System_U(bucketName, fileName, Buffer.from(B64Content, 'base64'), fileType);
+                console.log(`File Uploaded to Bucket::${bucketName  + " Type : "+fileType} with name ${fileName} [${i + 1}/${data.length}]`);
+            }
+        }
+        z();
+    }
     /**
      * @description Upload a file to the bucket specified using R2 instance built with the builder i.e <b>R2<b/>
      * @param data The file to upload

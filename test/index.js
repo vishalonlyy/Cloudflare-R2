@@ -1,9 +1,7 @@
 const { traffic, R2 } = require("cloudflare-r2");
-
 const { EmbedBuilder } = require("discord.js");
 const fs = require("fs");
 const path = require("path");
-
 try {
   const x = new R2()
     .setSecret(
@@ -13,12 +11,26 @@ try {
     .setId("530420ee13768d7553f2e57c64d36d33")
     .build();
 
-  
-  const y = new traffic()
-  .bucketName("vishal")
-  .upload(["test/test.png","test/test.png"]);
+    
+  const filePath = "test/test.txt";
+ async function z(){
+  const Raw = await fs.promises.readFile(filePath, 'utf8');
+  if (!Raw) return console.error("Error reading the file:", err);
+      // console.log({ Raw });
+      // const BufferedArray = Buffer.from(Raw);
+      // console.log(BufferedArray)
+
+      const Traffic = new traffic()
+      .bucketName("vishal")
+      .uploadRaw([Raw])
+ }
+
+ z();
+  // const y = new traffic()
+  // .bucketName("vishal")
+  // .uploadRaw([""])
+  // .upload(["test/image.png"]);
 } catch (e) {
   console.log(e);
 }
-
 // console.log(x)
