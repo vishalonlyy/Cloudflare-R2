@@ -10,7 +10,7 @@
     "runtest": "node test/index.js"
   },
   "author": "vishalonlyy",
-  "license": "ISC",
+  "license": "MIT",
   "dependencies": {
     "@aws-sdk/client-s3": "^3.433.0",
     "discord.js": "^14.13.0",
