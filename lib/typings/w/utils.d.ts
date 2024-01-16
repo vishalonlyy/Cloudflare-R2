@@ -1,15 +1,22 @@
 import { R2 } from "../base/modules";
+import { traffic } from "../base/Structures/traffic";
 /**
  * @description The Utils class
  * @class Utils
  */
 export declare class Utils {
     private static xInstance;
+    private static TrafficInstance;
     /**
      * @description Get the instance of R2
      * @returns R2 Instance
      */
     static getXInstance(): R2;
+    /**
+     * @description Get the instance of traffic
+     * @returns traffic Instance
+     */
+    static getTrafficInstance(): traffic;
     /**
      * @description Get the extension of the file
      * @param data The file to get the extension from
@@ -24,16 +31,27 @@ export declare class Utils {
     static getType(extension: string): any;
     /**
      * @description Upload a file to the bucket specified using R2 instance built with the builder i.e <b>R2<b/>
-     * @param data The file to upload
+     * @param data The file to upload while its in the raw format
      * @param Bn The bucket name to upload the file to
+     *
      */
-    static UploadRaw(data: any, Bn: string): void;
+    static UploadRaw(data: any, Bn: string): Promise<any[]>;
+    /**
+     * @description Convert a file to base64 format
+     * @param filePath The path of the file to convert to base64
+     * @returns The converted file
+     */
+    static convertToBase64(filePath: any): Promise<{
+        state: string;
+        filePath: string;
+        dataUrl: string | null;
+    }>;
     /**
      * @description Upload a file to the bucket specified using R2 instance built with the builder i.e <b>R2<b/>
      * @param data The file to upload
      * @param Bn The bucket name to upload the file to
      */
-    static FUpload(data: any | any[], Bn: string): void;
+    static FUpload(data: any | any[], Bn: string): Promise<any[]>;
     /**
      * @description Upload a file to the bucket specified using R2 instance built with the builder i.e <b>R2<b/>
      * @param data The file to upload

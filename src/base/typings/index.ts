@@ -17,7 +17,13 @@ type R2_Instance_StoreData<T> = {
     SecretAccessKey: string;
     Client: T;
 }
+
+type Traffic_UploadResponse = {
+    state : "success" | "failed";
+    data : string;
+}
 export type {
     B_data,
-    R2_Instance_StoreData
+    R2_Instance_StoreData,
+    Traffic_UploadResponse
 };
