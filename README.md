@@ -41,9 +41,9 @@ Cloudflare-R2 is a simple package that allows you to upload images to your Cloud
 
 ## Installation
 ```bash
-npm i cloudflare-r2
+npm i cloudflare-r2.js
 ------ or ---------------------
-yarn add cloudflare-r2
+yarn add cloudflare-r2.js
 ```
 
 ## Setting up 
