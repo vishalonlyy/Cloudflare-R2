@@ -6,10 +6,10 @@
 [![Stargazers][stars-github-shield]](https://github.com/vishalonlyy/Cloudflare-R2/stargazers)
 [![Issues][issues-github-shield]](https://github.com/vishalonlyy/Cloudflare-R2/issues)
 [![MIT License][license-github-shield]](https://github.com/vishalonlyy/Cloudflare-R2/blob/master/LICENSE)
-[![Discord Support](https://discordapp.com/api/guilds/936226552256036926/widget.png?style=shield)](SupportServer)
+[![Discord Support](https://discordapp.com/api/guilds/888745888829288458/widget.png?style=shield)](SupportServer)
 
 
-[chat-discord=shield]: https://img.shields.io/discord/936226552256036926?style=for-the-badge
+[chat-discord=shield]: https://img.shields.io/discord/888745888829288458?style=for-the-badge
 [version-github-shield]: https://img.shields.io/github/package-json/v/vishalonlyy/Cloudflare-R2?style=for-the-badge
 [forks-github-shield]: https://img.shields.io/github/forks/vishalonlyy/Cloudflare-R2?style=for-the-badge
 [stars-github-shield]: https://img.shields.io/github/stars/vishalonlyy/Cloudflare-R2?style=for-the-badge
@@ -136,3 +136,6 @@ const x = new traffic()
 ```
 ## Examples
 [Basic Use-Case Example]("https://github.com/vishalonlyy/Cloudflare-R2/blob/main/test/index.js)
+
+## Support
+- [Discord Server](https://discord.gg/groot)
