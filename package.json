@@ -1,6 +1,6 @@
 {
   "name": "cloudflare-r2.js",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A wrapper for R2's api to upload and retrive images in few clicks",
   "main": "lib/index.js",
   "scripts": {
