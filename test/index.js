@@ -32,10 +32,6 @@ try {
     const Traffic = new traffic().bucketName("vishal").uploadRaw([Raw, Raw]).then((x)=>{
       console.log({Uploaded: x, method: "raw-upload"})
     })
-    
-    // .then((x)=>{
-    //   console.log({Uploaded: x, method: "raw-upload"})
-    // });
   }
   z();
 } catch (e) {
