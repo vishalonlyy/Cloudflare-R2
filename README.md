@@ -135,7 +135,7 @@ const x = new traffic()
 }
 ```
 ## Examples
-[Basic Use-Case Example]("https://github.com/vishalonlyy/Cloudflare-R2/blob/main/test/index.js)
+[Basic Use-Case Example](https://github.com/vishalonlyy/Cloudflare-R2/blob/main/test/index.js)
 
 ## Support
 - [Discord Server](https://discord.gg/groot)
