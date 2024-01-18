@@ -22,7 +22,7 @@ Introducing Cloudflare-R2, a groundbreaking package designed to simplify image u
 
 ## Why?
 
-- **Streamlined Integration**: Say goodbye to the complexities of intricate API connections. [Project-Name] offers a straightforward and user-friendly approach to effortlessly upload your images directly to your Cloudflare R2 server.
+- **Streamlined Integration**: Say goodbye to the complexities of intricate API connections. cloudflare-r2.js offers a straightforward and user-friendly approach to effortlessly upload your images directly to your Cloudflare R2 server.
 
 - **Seamless Uploading Experience**: Enjoy a hassle-free process for sending images. Our solution ensures a smooth and intuitive uploading experience, enhancing the overall efficiency of your image handling.
 
@@ -37,7 +37,7 @@ Introducing Cloudflare-R2, a groundbreaking package designed to simplify image u
 Cloudflare-R2 is a simple package that allows you to upload images to your Cloudflare R2 server with ease. The package is designed to simplify the process of image uploading, eliminating the complexities of API connections and allowing you to focus on your project. With just under 10 lines of code, you can seamlessly integrate your Cloudflare R2 server and begin uploading images in no time.
 - This package is equipped with straightforward and pre-built features that simply require the image path or Base64 raw image data. Effortlessly upload your images to the server with ease.
 
-### See below for guides on how to use [project-name] & integrate it into your project.
+### See below for guides on how to use cloudflare-r2.js & integrate it into your project.
 
 ## Installation
 ```bash
