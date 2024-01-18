@@ -67,8 +67,8 @@ class R2 {
                 region: `${this.data.Region}`,
                 endpoint: `https://${this.data.Id}.r2.cloudflarestorage.com`,
                 credentials: {
-                    accessKeyId: `${this.data.AccessKeyId}`,//2ea6c4096c9f29f3baceba5e7cd5ca85
-                    secretAccessKey: `${this.data.SecretAccessKey}`//'5491e3a3c0ec2def42d6ea721efe87bae04071af492540a02367da962eeb0a49'
+                    accessKeyId: `${this.data.AccessKeyId}`,
+                    secretAccessKey: `${this.data.SecretAccessKey}`
                 }
             });
             (setS3(this.data.Client)).catch(err => {
