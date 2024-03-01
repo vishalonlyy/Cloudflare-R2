@@ -53,6 +53,17 @@ export declare class Utils {
      */
     static FUpload(data: any | any[], Bn: string): Promise<any[]>;
     /**
+     * @description Delete a file from the bucket specified using R2 instance built with the builder i.e <b>R2<b/>
+     * @param Bn The bucket name to delete the file from
+     * @param Fn The name of the file to delete
+     */
+    static Delete(Bn: string, Fn: string[]): Promise<any[]>;
+    /**
+     * @description Retrieve all the files in the bucket specified using R2 instance built with the builder i.e <b>R2<b/>
+     * @param Bn The bucket name to retrieve the files from
+     */
+    static RetriveFiles(Bn: string): Promise<string[]>;
+    /**
      * @description Upload a file to the bucket specified using R2 instance built with the builder i.e <b>R2<b/>
      * @param data The file to upload
      * @param Bn The bucket name to upload the file to

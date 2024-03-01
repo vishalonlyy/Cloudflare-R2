@@ -126,14 +126,69 @@ const x = new traffic()
   .then((res) => {
     console.log(res);
   });
+
+  /** 
+   * @response ---
+   *  {
+       state: "suceess" | "failed";
+       data: string of<Uploded FileName>; 
+      }
+   */
+
 ```
-**Response**
+### 3. Deleting an image
 ```js
-{
-     state: "suceess" | "failed";
-     data: string of<Uploded FileName>; 
-}
+const { traffic } = require("cloudflare-r2");
+  /**
+   * Using delete method to delete the files from the Cloudflare R2 server Bucket
+   */
+const Files = ["test.png"];
+const x = new traffic()
+  .bucketName("xxxxx") // Your Cloudflare-R2 Bucket Name from where you want to delete the image
+  .delete(Files) // Your image name
+  .then((x) => {
+      console.log({ Deleted: x, method: "default-delete" });
+    }); // Accessing the response of the delete method (Optional)
+
+  /** 
+    * @response 
+    *  {
+        Deleted: [
+          {
+            state: 'success',
+            data: 'test.png'
+          }
+        ],
+       method: 'default-delete'
+       }
+  */
 ```
+
+**Delete Options** - Should be used while deleting the image from the bucket (You can use both the methods together)
+- `bucketName` - Your Cloudflare-R2 Bucket Name where you want to delete the image `⚠️ Required`
+- `delete` - Deletes the image from the Cloudflare R2 server (Accepts the name of the image in <Array | String>)
+
+### 4. Retriveing Uploaded Files
+```js
+const { traffic } = require("cloudflare-r2");
+  /**
+   * Using getFiles method to get the files which were uploaded and are **Present** in the bucket
+   */
+  const Objs = new traffic().getFiles("xxxx").then((x) => {
+    console.log({ Files: x, method: "default-getFiles" });
+  });
+  /** 
+    * @response 
+    *  {
+        Files: [
+          'test.png',
+          'test2.png'
+        ],
+       method: 'default-getFiles'
+       }
+  */
+```
+
 ## Examples
 [Basic Use-Case Example](https://github.com/vishalonlyy/Cloudflare-R2/blob/main/test/index.js)
 

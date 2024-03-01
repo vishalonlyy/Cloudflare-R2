@@ -2,6 +2,7 @@ import { B_data } from "../modules/index.js";
 declare class traffic {
     data: B_data | never;
     UploadedFiles: string[];
+    DeletedFiles: string[];
     private static _instance;
     constructor(data?: B_data);
     /**
@@ -54,6 +55,36 @@ declare class traffic {
      * ```
      */
     uploadRaw(data: any | any[]): Promise<any>;
+    /**
+     * @description Delete a file from the bucket specified using R2 instance built with the builder i.e <b>R2<b/>
+     * @param data The file to delete (Can be a file or an array of files)
+     * @info 📢 Not suggested to be used without setting the bucket name i.e traffic.bucketName("bucketName")
+     * @returns ` { state: "suceess" | "failed";data: string of<Deleted FileNames>; } `
+     * @example
+     * ```ts
+     * const traffic = new traffic();
+     * traffic.bucketName("bucketName").delete(file).then((res)=>{console.log(res)});
+     * or
+     * const traffic = new traffic()
+     * .bucketName("bucketName")
+     * .delete(file).then((res)=>{console.log(res)});
+     * ```
+     */
+    delete(data: string | string[]): Promise<any>;
+    /**
+     * @description Get the files in the bucket
+     * @param bucketName The name of the bucket to get the files from
+     * @returns An array of file names
+     * @example
+     * ```ts
+     * const traffic = new traffic();
+     * traffic.getFiles("bucketName").then((files)=>{console.log(files)});
+     * or
+     * const traffic = new traffic()
+     * .getFiles("bucketName").then((files)=>{console.log(files)});
+     * ```
+     */
+    getFiles(bucketName: string): Promise<string[]>;
     /**
      * @description Get the bucket name which is being used by the R2 instance
      * @returns The bucket name which is being used by the R2 instance

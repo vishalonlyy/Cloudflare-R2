@@ -22,8 +22,14 @@ type Traffic_UploadResponse = {
     state : "success" | "failed";
     data : string;
 }
+
+type Traffic_DeleteFileResponse = {
+    state : "success" | "failed";
+    data : string;
+}
 export type {
     B_data,
     R2_Instance_StoreData,
-    Traffic_UploadResponse
+    Traffic_UploadResponse,
+    Traffic_DeleteFileResponse
 };
