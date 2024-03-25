@@ -1,5 +1,4 @@
 const { traffic, R2 } = require("cloudflare-r2");
-const { EmbedBuilder } = require("discord.js");
 const fs = require("fs");
 const path = require("path");
 try {
